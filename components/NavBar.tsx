@@ -5,7 +5,7 @@ import { NavLinks } from "@/constants";
 import AuthProviders from "./AuthProviders";
 
 const NavBar = () => {
-  const session = {};
+  const session = null;
 
   return (
     <nav className="flex justify-between items-center navbar">
