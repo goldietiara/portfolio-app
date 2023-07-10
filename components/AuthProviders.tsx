@@ -21,13 +21,13 @@ const AuthProviders = () => {
   const [providers, setProviders] = useState<typeProviders | null>(null);
 
   useEffect(() => {
-    const fetchProvider = async () => {
+    const fetchProviders = async () => {
       const res = await getProviders();
       console.log(res);
       setProviders(res);
     };
 
-    fetchProvider();
+    fetchProviders();
   }, []);
 
   if (providers) {

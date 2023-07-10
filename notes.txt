@@ -15,5 +15,10 @@ It replaces the schema.graphql file with grafbase.config.ts,
 which should be placed into the project's grafbase directory.
 
 
+in the future: learn clerk to simplify the auth process 
+
+npx grafbase@0.24 dev
+
+
 
 

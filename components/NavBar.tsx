@@ -3,9 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { NavLinks } from "@/constants";
 import AuthProviders from "./AuthProviders";
+import { getCurrentUser } from "@/lib/session";
+import ProfileMenu from "./ProfileMenu";
 
-const NavBar = () => {
-  const session = null;
+const NavBar = async () => {
+  const session = await getCurrentUser();
 
   return (
     <nav className="flex justify-between items-center navbar">
@@ -33,9 +35,9 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="flexCenter gap-4 text-small ">
-        {session ? (
+        {session?.user ? (
           <>
-            userPhoro
+            <ProfileMenu session={session} />
             <Link
               href="/create-project"
               className="hover:text-pink-400 hover:underline"
