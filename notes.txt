@@ -1,0 +1,19 @@
+TypeScript, Taildwind CSS, App Router,
+
+additional package
+@headlessui/react           -> to create combo box and dropdown element
+cloudinary                  -> for image upload (to manage all the media assets present in the cloud)
+jsonwebtoken                -> to share security information between two parties — a client and a server
+@types/jsonwebtoken         -> for auth (contains the type definitionof jsonwebtoken)
+graphql-request             -> to make graphql actions
+next-auth                   -> for auth (a complete open source authentication solution for Next.js applications)
+@grafbase/sdk --save-dev    -> to combine data sources into a centralized GraphQL endpoint and deploy a serverless GraphQL backend
+
+npx grafbase init --config-format typescript -> 
+A TypeScript library to generate a Grafbase configuration. 
+It replaces the schema.graphql file with grafbase.config.ts, 
+which should be placed into the project's grafbase directory.
+
+
+
+
