@@ -34,7 +34,7 @@ const Button = ({
             : bgColor
             ? bgColor
             : " bg-pink-400 hover:bg-pink-600"
-        } flexCenter gap-3 px-4 py-3 `}
+        } flexCenter gap-3 px-4 py-3 w-full `}
     onClick={handleClick}
   >
     {leftIcon && (
