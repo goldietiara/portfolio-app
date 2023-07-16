@@ -6,14 +6,15 @@ import Button from "./Button";
 type Props = {
   startCursor: string;
   endCursor: string;
-  hasPreviousePage: boolean;
+  hasPreviousPage: boolean;
   hasNextPage: boolean;
 };
 
 const LoadMore = ({
   startCursor,
   endCursor,
-  hasPreviousePage,
+  hasPreviousPage,
+  //   hasPreviousePage,
   hasNextPage,
 }: Props) => {
   const handleNavigation = (direction: string) => {
@@ -22,7 +23,7 @@ const LoadMore = ({
     if (direction === "next" && hasNextPage) {
       currentParams.delete("startcursor");
       currentParams.set("endcursor", endCursor);
-    } else if (direction === "first" && hasPreviousePage) {
+    } else if (direction === "first" && hasPreviousPage) {
       currentParams.delete("endcursor");
       currentParams.set("startcursor", startCursor);
     }
@@ -33,10 +34,10 @@ const LoadMore = ({
   };
   const router = useRouter();
   return (
-    <div className=" flex mt-5 w-full justify-center">
-      {hasPreviousePage && (
+    <div className=" flex mt-20 w-full justify-center gap-10">
+      {hasPreviousPage && (
         <Button
-          title="First Page"
+          title="Back"
           handleClick={() => handleNavigation("first")}
         ></Button>
       )}

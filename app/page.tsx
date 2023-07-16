@@ -9,7 +9,7 @@ type ProjectSearch = {
   projectSearch: {
     edges: { node: ProjectInterface }[];
     pageInfo: {
-      hasPreviousePage: boolean;
+      hasPreviousPage: boolean;
       hasNextPage: boolean;
       startCursor: string;
       endCursor: string;
@@ -45,8 +45,6 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
     );
   }
 
-  const pagination = data?.projectSearch?.pageInfo;
-
   return (
     <section className="flex-start flex-col paddings mb-16">
       <Categories></Categories>
@@ -65,11 +63,12 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
           );
         })}
       </section>
+
       <LoadMore
-        startCursor={pagination.startCursor}
-        endCursor={pagination.endCursor}
-        hasPreviousePage={pagination.hasPreviousePage}
-        hasNextPage={pagination.hasNextPage}
+        startCursor={data?.projectSearch?.pageInfo?.startCursor}
+        endCursor={data?.projectSearch?.pageInfo?.endCursor}
+        hasPreviousPage={data?.projectSearch?.pageInfo?.hasPreviousPage}
+        hasNextPage={data?.projectSearch?.pageInfo.hasNextPage}
       />
     </section>
   );

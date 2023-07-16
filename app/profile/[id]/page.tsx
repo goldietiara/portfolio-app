@@ -1,7 +1,27 @@
+import { UserProfile } from "@/common.types";
+import ProfilePage from "@/components/ProfilePage";
+import { getUserProjects } from "@/lib/actions";
 import React from "react";
 
-const Profile = () => {
-  return <div>Profile</div>;
+type Props = {
+  params: {
+    id: string;
+  };
+};
+const Profile = async ({ params }: Props) => {
+  const result = (await getUserProjects(params.id, 100)) as {
+    user: UserProfile;
+  };
+
+  if (!result?.user) {
+    return <p className="no-result-text">Failed to fetch user info</p>;
+  }
+
+  return (
+    <div>
+      <ProfilePage user={result?.user}></ProfilePage>
+    </div>
+  );
 };
 
 export default Profile;
