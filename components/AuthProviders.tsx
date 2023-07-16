@@ -35,8 +35,12 @@ const AuthProviders = () => {
       <div>
         {Object.values(providers).map((v: typeProvider, i, a) => {
           return (
-            <button key={i} onClick={() => signIn(v?.id)}>
-              {v.id}
+            <button
+              key={i}
+              onClick={() => signIn(v?.id)}
+              className="hover:bg-pink-600 p-3 bg-pink-400 text-white rounded-2xl transition-all duration-300 ease-in-out"
+            >
+              Sign In
             </button>
           );
         })}

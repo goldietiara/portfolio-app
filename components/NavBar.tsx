@@ -40,7 +40,7 @@ const NavBar = async () => {
             <ProfileMenu session={session} />
             <Link
               href="/create-project"
-              className="hover:text-pink-400 hover:underline"
+              className="hover:bg-pink-600 p-3 bg-pink-400 text-white rounded-2xl transition-all duration-200 ease-in-out"
             >
               Share Work
             </Link>

@@ -12,7 +12,9 @@ const CreateProject = async () => {
   return (
     <div>
       <Modal>
-        <h1 className="text-center text-6xl font-semibold">New Project</h1>
+        <h1 className=" fixed align-middle text-center text-2xl font-semibold p-6">
+          New Project
+        </h1>
         <ProjectForm type="create" session={session}></ProjectForm>
       </Modal>
     </div>

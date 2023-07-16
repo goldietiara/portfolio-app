@@ -25,11 +25,16 @@ const Button = ({
   <button
     type={type || "button"}
     disabled={submitting || false}
-    className={`flexCenter gap-3 px-4 py-3 
+    className={`text-white rounded-2xl transition-all duration-200 ease-in-out
+
         ${textColor ? textColor : "text-white"} 
         ${
-          submitting ? "bg-black/50" : bgColor ? bgColor : " bg-pink-500"
-        } rounded-xl text-sm font-medium max-md:w-full`}
+          submitting
+            ? "bg-black/50"
+            : bgColor
+            ? bgColor
+            : " bg-pink-400 hover:bg-pink-600"
+        } flexCenter gap-3 px-4 py-3 `}
     onClick={handleClick}
   >
     {leftIcon && (
