@@ -25,27 +25,28 @@ const ProjectCard = ({ id, image, title, userId, name, avatarUrl }: Props) => {
   }, []);
 
   return (
-    <div className="flexCenter flex-col rounded-2xl drop-shadow-card">
+    <div className="flex justify-center items-center flex-col drop-shadow-card">
       <Link
         href={`/project/${id}`}
-        className="flexCenter group relative w-full h-full"
+        className="flex justify-center items-center group relative w-full h-full"
       >
         <Image
           src={image}
           width={414}
           height={314}
-          className="w-full h-full object-cover rounded-2xl"
+          className="w-full h-full object-cover "
           alt="project image"
         />
 
-        <div className="hidden group-hover:flex profile_card-title">
+        <div className="hidden group-hover:flex justify-end items-end w-full h-full bg-black/50 gap-2 absolute bottom-0 right-0 font-medium text-xl text-white p-4 opacity-0 hover:opacity-100 ease-in-out transition-all duration-500">
+          {/* <div className="hidden group-hover:flex justify-end items-end w-full h-full bg-gradient-to-b from-transparent to-black/50 gap-2 absolute bottom-0 right-0 font-medium text-xl text-white p-4 opacity-0 hover:opacity-100 ease-in-out transition-all duration-500"> */}
           <p className="w-full">{title}</p>
         </div>
       </Link>
 
-      <div className="flexBetween w-full px-2 mt-3 font-semibold text-sm">
+      <div className="flex justify-between items-center w-full px-2 mt-3 font-semibold text-sm">
         <Link href={`/profile/${userId}`}>
-          <div className="flexCenter gap-2">
+          <div className="flex justify-center items-center gap-2">
             <Image
               src={avatarUrl}
               width={24}
@@ -57,12 +58,12 @@ const ProjectCard = ({ id, image, title, userId, name, avatarUrl }: Props) => {
           </div>
         </Link>
 
-        <div className="flexCenter gap-3">
-          <div className="flexCenter gap-2">
+        <div className="flex justify-center items-center gap-3">
+          <div className="flex justify-center items-center gap-2">
             <Image src="/hearth.svg" width={13} height={12} alt="heart" />
             <p className="text-sm">{randomLikes}</p>
           </div>
-          <div className="flexCenter gap-2">
+          <div className="flex justify-center items-center gap-2">
             <Image src="/eye.svg" width={12} height={9} alt="eye" />
             <p className="text-sm">{randomViews}</p>
           </div>

@@ -38,9 +38,9 @@ const AuthProviders = () => {
             <button
               key={i}
               onClick={() => signIn(v?.id)}
-              className="hover:bg-pink-600 p-3 bg-pink-400 text-white rounded-2xl transition-all duration-300 ease-in-out"
+              className="text-black font-light text-base hover:underline"
             >
-              Sign In
+              SIGN IN
             </button>
           );
         })}

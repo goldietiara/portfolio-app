@@ -1,5 +1,4 @@
 import { g, auth, config } from "@grafbase/sdk";
-import { rule } from "postcss";
 
 // Welcome to Grafbase!
 // Define your data models, integrate auth, permission rules, custom resolvers, search, and more with Grafbase.

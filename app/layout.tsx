@@ -18,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-col justify-between ${inter.className}`}>
+      <body
+        className={`flex flex-col justify-between font-light font-serif bg-Ivory ${inter.className}`}
+      >
         <NavBar />
         {children}
         <Footer />

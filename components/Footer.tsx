@@ -29,20 +29,9 @@ const FooterColumn = ({ title, links }: ColumnProps) => (
 
 const Footer = () => {
   return (
-    <footer className="flexStart footer">
-      <div className="flex flex-col gap-12 w-full ">
-        <div className="flex items-start flex-col">
-          {/* <Image
-            src="/logo-purple.svg"
-            width={115}
-            height={38}
-            alt="footer-logo"
-          /> */}
-          <p className=" text-start text-sm font-normal mt-5 max-w-xs">
-            share, grow, and get creative
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-between gap-12">
+    <footer className="flex items-center justify-start footer">
+      <div className="flex flex-col w-full ">
+        {/* <div className="flex flex-wrap justify-between gap-12">
           <FooterColumn
             title={footerLinks[3].title}
             links={footerLinks[3].links}
@@ -73,9 +62,9 @@ const Footer = () => {
             title={footerLinks[0].title}
             links={footerLinks[0].links}
           />
-        </div>
+        </div> */}
       </div>
-      <div className="flexBetween footer_copyright">
+      <div className="flex justify-between items-center footer_copyright">
         <p>2021 devbyodi. All rights reserved.</p>
         <p className="text-gray">
           <span className="text-black font-semibold">301 </span>

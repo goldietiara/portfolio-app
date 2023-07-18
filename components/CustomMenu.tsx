@@ -32,7 +32,7 @@ const CustomMenu = ({ title, state, filters, setState }: Props) => (
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="flexStart custom_menu-items">
+        <Menu.Items className="flex items-center justify-start custom_menu-items">
           {filters.map((tag) => (
             <Menu.Item key={tag}>
               <button

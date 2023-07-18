@@ -1,7 +1,8 @@
-import { ProjectInterface, UserProfile } from "@/common.types";
-import { getUserProjects } from "@/lib/actions";
-import Image from "next/image";
 import Link from "next/link";
+
+import { getUserProjects } from "@/lib/actions";
+import { ProjectInterface, UserProfile } from "@/common.types";
+import Image from "next/image";
 
 type Props = {
   userId: string;
@@ -18,17 +19,18 @@ const RelatedProjects = async ({ userId, projectId }: Props) => {
   if (filteredProjects?.length === 0) return null;
 
   return (
-    <section className="flex flex-col mt-32 w-full px-10">
+    <section className="flex flex-col mt-32 w-full">
       <div className="flexBetween">
         <p className="text-base font-bold">More by {result?.user?.name}</p>
         <Link
           href={`/profile/${result?.user?.id}`}
-          className=" text-pink-400 hover:underline"
+          className="text-primary-purple text-base"
         >
-          view All
+          View All
         </Link>
       </div>
-      <div className="related_projects-grid">
+
+      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-5">
         {filteredProjects?.map(({ node }: { node: ProjectInterface }) => (
           <div className="flexCenter related_project-card drop-shadow-card">
             <Link

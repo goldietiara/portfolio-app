@@ -8,7 +8,6 @@ import { getCurrentUser } from "@/lib/session";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-Modal;
 
 const project = async ({ params: { id } }: { params: { id: string } }) => {
   const session = await getCurrentUser();
@@ -48,8 +47,8 @@ const project = async ({ params: { id } }: { params: { id: string } }) => {
         <div className=" flex flex-col gap-5 items-center w-full p-10">
           <Image
             src={`${projectDetails?.image}`}
-            height={200}
-            width={500}
+            height={100}
+            width={1080}
             alt="project-thumbnail"
             className=" rounded-xl"
           ></Image>
@@ -72,26 +71,28 @@ const project = async ({ params: { id } }: { params: { id: string } }) => {
             </Link>
           </div>
         </div>
-        <section className="flexCenter w-full gap-8 mt-28">
-          <span className="w-full h-0.5 bg-light-white-200" />
-          <Link
-            href={`/${projectDetails?.id}`}
-            className="min-w-[82px] h-[82px]"
-          >
-            <Image
-              src={`${projectDetails?.createdBy?.avatarUrl}`}
-              className="rounded-full"
-              width={82}
-              height={82}
-              alt="profile image"
-            />
-          </Link>
-          <span className="w-full h-0.5 bg-light-white-200" />
+        <section className="w-[90%]">
+          <div className="flex justify-center items-center w-full gap-8 mt-28">
+            <span className="w-full h-0.5 bg-light-white-200" />
+            <Link
+              href={`/${projectDetails?.id}`}
+              className="min-w-[82px] h-[82px]"
+            >
+              <Image
+                src={`${projectDetails?.createdBy?.avatarUrl}`}
+                className="rounded-full"
+                width={82}
+                height={82}
+                alt="profile image"
+              />
+            </Link>
+            <span className="w-full h-0.5 bg-light-white-200" />
+          </div>
+          <RelatedProjects
+            userId={`${projectDetails?.createdBy?.id}`}
+            projectId={`${projectDetails?.id}`}
+          />
         </section>
-        <RelatedProjects
-          userId={`${projectDetails?.createdBy?.id}`}
-          projectId={`${projectDetails?.id}`}
-        />
       </Modal>
     </section>
   );

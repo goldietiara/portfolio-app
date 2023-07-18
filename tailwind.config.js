@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        DEFAULT: "1px",
+        1: "1px",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+        8: "8px",
+      },
       colors: {
         "nav-border": "#EBEAEA",
         "light-white": "#FAFAFB",
@@ -20,6 +29,8 @@ module.exports = {
         "black-100": "#252525",
         "primary-purple": "#9747FF",
         "gray-50": "#D9D9D9",
+        Ivory: "#fffafa",
+        Grass: "#bcccb4",
       },
       boxShadow: {
         menu: "0px 159px 95px rgba(13,12,34,0.01), 0px 71px 71px rgba(13,12,34,0.02), 0px 18px 39px rgba(13,12,34,0.02), 0px 0px 0px rgba(13,12,34,0.02)",

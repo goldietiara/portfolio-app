@@ -4,9 +4,8 @@ import { ProjectInterface } from "@/common.types";
 import ProjectCard from "@/components/ProjectCard";
 import Categories from "@/components/Categories";
 import LoadMore from "@/components/LoadMore";
+import { PiArrowRightThin } from "react-icons/pi";
 import Link from "next/link";
-import SectionTemp from "@/components/SectionTemp";
-import AboutTemp from "@/components/AboutTemp";
 
 type ProjectSearch = {
   projectSearch: {
@@ -33,7 +32,7 @@ type Props = {
   searchParams: SearchParams;
 };
 
-const Home = async ({ searchParams: { category, endcursor } }: Props) => {
+const About = async ({ searchParams: { category, endcursor } }: Props) => {
   const data = (await fetchAllProjects(category, endcursor)) as ProjectSearch;
 
   const projectToDisplay = data?.projectSearch?.edges || [];
@@ -52,19 +51,47 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
     <section className="w-full h-full flex items-center justify-start flex-col lg:px-7 my-6 px-5 pb-16 relative">
       <div className="fixed bottom-0 left-7 h-[74.4%] border-l-1 border-black"></div>
       <div className="fixed bottom-0 right-7 h-[80.5%] border-r-1 border-black"></div>
-      <section className="flex w-full h-fit px-16 pb-40 pt-0 border-b-1 border-black lg:text-8xl sm:text-lg font-medium uppercase ">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-        <div className=" w-full h-full bg-slate-300"></div>
+      {/* <section className=" overflow-hidden h-[550px] w-full relative lg:text-8xl sm:text-lg font-medium uppercase">
+        <video autoPlay loop muted className="px-7 py-3">
+          <source
+            src={
+              "https://cdn.dribbble.com/uploads/39489/original/485abd9d034966142a88773f079024ee.mp4?1657907917"
+            }
+            type="video/mp4"
+          />
+          <div className="absolute px-16 pb-40 pt-0 top-0">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <div className=" w-full h-full bg-slate-300"></div>
+          </div>
+        </video>
+      </section> */}
+
+      {/* ////////////// */}
+      <section className="flex w-full h-full overflow-hidden relative border-b-1 border-black pb-7">
+        <div className=" w-full h-[500px] overflow-hidden px-7 py-3">
+          {/* <div className="w-[96%] h-[500px] bg-white/80 absolute"></div> */}
+          <video autoPlay loop muted className=" opacity-50">
+            <source
+              src={
+                "https://cdn.dribbble.com/uploads/39489/original/485abd9d034966142a88773f079024ee.mp4?1657907917"
+              }
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <h1 className="absolute px-16 pt-10 lg:text-8xl sm:text-lg font-medium uppercase">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </h1>
       </section>
 
-      <SectionTemp title="ABOUT ME">
-        <AboutTemp />
-      </SectionTemp>
-
-      <SectionTemp title="work">
+      <section className="flex flex-col w-full h-full border-b-1 border-black">
+        <h1 className="p-7 w-full h-full font-medium text-2xl border-b-1 border-black">
+          WORK
+        </h1>
         <div className=" border-b-1 border-black">
-          <Categories />
+          <Categories></Categories>
         </div>
+
         <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-10 w-full p-7">
           {projectToDisplay.map(({ node }: { node: ProjectInterface }) => {
             return (
@@ -80,20 +107,9 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
             );
           })}
         </div>
-      </SectionTemp>
-
-      <SectionTemp title="contacts">
-        <div className="p-7">please contact wawa 081908031969</div>
-      </SectionTemp>
-
-      {/* <LoadMore
-        startCursor={data?.projectSearch?.pageInfo?.startCursor}
-        endCursor={data?.projectSearch?.pageInfo?.endCursor}
-        hasPreviousPage={data?.projectSearch?.pageInfo?.hasPreviousPage}
-        hasNextPage={data?.projectSearch?.pageInfo?.hasNextPage}
-      /> */}
+      </section>
     </section>
   );
 };
 
-export default Home;
+export default About;

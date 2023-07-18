@@ -87,7 +87,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
   return (
     <form
       onSubmit={handleFormSubmit}
-      className="flexStart flex-col w-full pt-10 gap-10 text-lg max-w-5xl mx-auto "
+      className="flex items-center justify-start flex-col w-full pt-10 gap-10 text-lg max-w-5xl mx-auto "
     >
       <FormField
         title="Title"
@@ -126,8 +126,11 @@ const ProjectForm = ({ type, session, project }: Props) => {
         setState={(value) => handleStateChange("githubUrl", value)}
       />
 
-      <div className="flexStart form_image-container ">
-        <label htmlFor="poster" className="flexCenter form_image-label">
+      <div className="flex items-center justify-start form_image-container ">
+        <label
+          htmlFor="poster"
+          className="flex justify-center items-center form_image-label"
+        >
           {!form.image && "Choose a poster for your project"}
         </label>
         <input
@@ -147,7 +150,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
           />
         )}
       </div>
-      <div className="flexStart w-full">
+      <div className="flex items-center justify-start w-full">
         <Button
           title={
             submitting

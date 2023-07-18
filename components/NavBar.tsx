@@ -10,44 +10,46 @@ const NavBar = async () => {
   const session = await getCurrentUser();
 
   return (
-    <nav className="flex justify-between items-center navbar">
-      <div className="flex-1 flexStart gap-10">
+    <nav className="flex m-7">
+      <div className=" w-fit pr-10">
         <Link href={"/"}>
           <Image
             src="/chiyo-chichi-fliped.PNG"
-            width={50}
-            height={50}
+            width={100}
+            height={100}
             alt="logo"
           />
         </Link>
-        <ul className="xl:flex hidden text-small gap-7 ">
+      </div>
+      <div className="flex items-center justify-start border-1 border-black w-full">
+        <ul className="flex h-full w-full">
           {NavLinks.map((v, i, a) => {
             return (
               <Link
                 href={v.href}
                 key={v.key}
-                className="hover:text-pink-400 hover:underline"
+                className=" w-full h-full border-r-1 border-black flex justify-evenly items-center text-center hover:underline"
               >
                 {v.text}
               </Link>
             );
           })}
         </ul>
-      </div>
-      <div className="flexCenter gap-4 text-small ">
-        {session?.user ? (
-          <>
-            <ProfileMenu session={session} />
-            <Link
-              href="/create-project"
-              className="hover:bg-pink-600 p-3 bg-pink-400 text-white rounded-2xl transition-all duration-200 ease-in-out"
-            >
-              Share Work
-            </Link>
-          </>
-        ) : (
-          <AuthProviders />
-        )}
+        <div className="  w-[30%] h-full flex justify-center items-center px-5 gap-10 text-sm font-medium ">
+          {session?.user ? (
+            <>
+              <Link
+                href="/create-project"
+                className="hover:underline font-light text-base"
+              >
+                SHARE WORK
+              </Link>
+              <ProfileMenu session={session} />
+            </>
+          ) : (
+            <AuthProviders />
+          )}
+        </div>
       </div>
     </nav>
   );
