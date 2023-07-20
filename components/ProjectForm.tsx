@@ -3,12 +3,10 @@
 import Image from "next/image";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-
 import FormField from "./FormField";
 import Button from "./Button";
 import CustomMenu from "./CustomMenu";
 import { categoryFilters } from "@/constants";
-// import { updateProject, createNewProject, fetchToken } from "@/lib/actions";
 import { createNewProject, fetchToken, updateProject } from "@/lib/actions";
 import { FormState, ProjectInterface, SessionInterface } from "@/common.types";
 
