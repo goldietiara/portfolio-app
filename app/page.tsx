@@ -73,9 +73,9 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
       </SectionTemp>
 
       <SectionTemp title="work">
-        {/* <div className=" border-b-1 border-black">
+        <div className=" border-b-1 border-black">
           <Categories />
-        </div> */}
+        </div>
         <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-10 w-full p-7">
           {projectToDisplay.map(({ node }: { node: ProjectInterface }) => {
             return (
