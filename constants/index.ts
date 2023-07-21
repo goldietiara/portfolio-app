@@ -25,6 +25,12 @@ export const categoryFilters = [
   "Chatbots",
   "Others",
 ];
+export const AboutImgs = [
+  "/about-me1.jpg",
+  "/about-me2.jpg",
+  "/about-me3.jpg",
+  "/about-me4.jpg",
+];
 
 export const footerLinks = [
   {

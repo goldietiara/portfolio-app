@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
 import React from "react";
+import AboutImg from "./AboutImg";
 
 const AboutTemp = () => {
   return (
@@ -30,41 +31,7 @@ const AboutTemp = () => {
               </div>
             </div>
           </div> */}
-      <div className=" h-full w-full grid grid-cols-2 p-8">
-        <div className="relative cursor-pointer">
-          <div className="absolute inset-0 opacity-80 border-b-1 border-black pr-8 pb-8"></div>
-          <div className="absolute inset-0 transform hover:skew-x-6 hover:rotate-6 transition-all duration-300">
-            <Image
-              src={"/about-me1.jpg"}
-              width={1080}
-              height={1080}
-              alt="about-me"
-              className=" pr-8 pb-8"
-            ></Image>
-          </div>
-        </div>
-        <Image
-          src={"/about-me2.jpg"}
-          width={1080}
-          height={1080}
-          alt="about-me"
-          className=" border-l-1 border-b-1 border-black pl-8 pb-8"
-        ></Image>
-        <Image
-          src={"/about-me3.jpg"}
-          width={1080}
-          height={1080}
-          alt="about-me"
-          className=" pr-8 pt-8"
-        ></Image>
-        <Image
-          src={"/about-me4.jpg"}
-          width={1080}
-          height={1080}
-          alt="about-me"
-          className=" border-l-1  border-black pl-8 pt-8"
-        ></Image>
-      </div>
+      <AboutImg></AboutImg>
     </div>
   );
 };
