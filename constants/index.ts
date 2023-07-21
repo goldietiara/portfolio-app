@@ -23,8 +23,8 @@ export const categoryFilters = [
   "Blockchain",
   "E-commerce",
   "Chatbots",
-  "Others",
 ];
+
 export const AboutImgs = [
   "/about-me1.jpg",
   "/about-me2.jpg",

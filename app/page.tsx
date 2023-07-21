@@ -22,8 +22,8 @@ type ProjectSearch = {
 };
 
 type SearchParams = {
-  category?: string;
-  endcursor?: string;
+  category?: string | null;
+  endcursor?: string | null;
 };
 
 export const dynamic = "force-dynamic";

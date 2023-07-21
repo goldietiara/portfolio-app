@@ -95,9 +95,9 @@ export const createNewProject = async (
   }
 };
 
-export const fetchAllProjects = async (
-  category?: string,
-  endcursor?: string
+export const fetchAllProjects = (
+  category?: string | null,
+  endcursor?: string | null
 ) => {
   client.setHeader("x-api-key", apiKey);
 
@@ -121,8 +121,6 @@ export const updateProject = async (
   projectId: string,
   token?: string
 ) => {
-  //to check if the URL of the image is base64 string
-  //if it is then we need to upload the new image if not then we upload the old image
   function isBase64DataURL(value: string) {
     const base64DataURL = /^data:image\/[a-z]+;base64,/;
     return base64DataURL.test(value);
