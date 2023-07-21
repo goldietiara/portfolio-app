@@ -7,6 +7,7 @@ import LoadMore from "@/components/LoadMore";
 import Link from "next/link";
 import SectionTemp from "@/components/SectionTemp";
 import AboutTemp from "@/components/AboutTemp";
+import { type } from "os";
 
 type ProjectSearch = {
   projectSearch: {
@@ -49,12 +50,22 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
   }
 
   return (
-    <section className="w-full h-full flex items-center justify-start flex-col lg:px-7 my-6 px-5 pb-16 relative">
+    <main className="w-full h-full flex items-center justify-start flex-col lg:px-7 my-6 px-5 pb-16 relative">
       <div className="fixed bottom-0 left-7 h-[74.4%] border-l-1 border-black"></div>
       <div className="fixed bottom-0 right-7 h-[80.5%] border-r-1 border-black"></div>
-      <section className="flex w-full h-fit px-16 pb-40 pt-0 border-b-1 border-black lg:text-8xl sm:text-lg font-medium uppercase ">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-        <div className=" w-full h-full bg-slate-300"></div>
+      <section className="w-full h-fit px-16 pb-64 border-b-1 border-black uppercase">
+        <header className="flex group mb-10">
+          <h1 className="font-mono text-black lg:text-8xl md:text-6xl text-sm font-medium ">
+            <span className="inline-flex h-full pt-2 overflow-x-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform">
+              hi, I&apos;m Goldie
+              {/* <br className="block md:hidden" /> */}
+            </span>
+            <span className=" cursor box-border inline-block w-5 h-full -mb-4 ml-2  bg-transparent animate-cursor will-change-transform"></span>
+          </h1>
+        </header>
+        <div className="font-medium md:text-3xl lg:text-xl text-sm">
+          developer by choice and designer for fun
+        </div>
       </section>
 
       <SectionTemp title="ABOUT ME">
@@ -62,9 +73,9 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
       </SectionTemp>
 
       <SectionTemp title="work">
-        <div className=" border-b-1 border-black">
+        {/* <div className=" border-b-1 border-black">
           <Categories />
-        </div>
+        </div> */}
         <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-10 w-full p-7">
           {projectToDisplay.map(({ node }: { node: ProjectInterface }) => {
             return (
@@ -85,14 +96,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
       <SectionTemp title="contacts">
         <div className="p-7">please contact wawa 081908031969</div>
       </SectionTemp>
-
-      {/* <LoadMore
-        startCursor={data?.projectSearch?.pageInfo?.startCursor}
-        endCursor={data?.projectSearch?.pageInfo?.endCursor}
-        hasPreviousPage={data?.projectSearch?.pageInfo?.hasPreviousPage}
-        hasNextPage={data?.projectSearch?.pageInfo?.hasNextPage}
-      /> */}
-    </section>
+    </main>
   );
 };
 
