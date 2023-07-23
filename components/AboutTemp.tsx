@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PiArrowRightThin } from "react-icons/pi";
+// import { PiArrowRightThin } from "react-icons/pi";
 import React from "react";
 import AboutImg from "./AboutImg";
 
@@ -19,7 +19,8 @@ const AboutTemp = () => {
         </div>
         <Link href={`/about`}>
           <div className="w-[51%] h-fit hover:w-[55%] pl-1 flex justify-between items-center border-b-1 border-l-1 border-black text-3xl text-left font-thin leading-tight cursor-pointer transition-all ease-in-out duration-300">
-            MORE ABOUT ME <PiArrowRightThin />
+            MORE ABOUT ME
+            {/* <PiArrowRightThin /> */}
           </div>
         </Link>
       </div>
