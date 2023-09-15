@@ -15,7 +15,7 @@ const User = g
       .optional(),
   })
   .auth((rules) => {
-    rules.public().read();
+    rules.public().read()
   });
 
 //@ts-ignore

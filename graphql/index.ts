@@ -35,6 +35,7 @@ export const deleteProjectMutation = `
     projectDelete(by: { id: $id }) {
       deletedId
     }
+    
   }
 `;
 
